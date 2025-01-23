@@ -1,6 +1,11 @@
+"use client";
 import Link from "next/link";
+import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
 const Navbar = () => {
+  const { user } = useKindeBrowserClient();
   return (
     <div>
       <div className="bg-base-400">
@@ -35,10 +40,10 @@ const Navbar = () => {
                   <Link href="/">Home</Link>
                 </li>
                 <li>
-                  <Link href="/about">About</Link>
+                  <Link href="/About">About</Link>
                 </li>
                 <li>
-                  <Link href="/product">Product</Link>
+                  <Link href="/Products">Product</Link>
                 </li>
               </ul>
             </div>
@@ -50,20 +55,29 @@ const Navbar = () => {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link href="/About">About</Link>
               </li>
               <li>
-                <Link href="/product">Product</Link>
+                <Link href="/Profile">Profile</Link>
               </li>
             </ul>
           </div>
           <div className="navbar-end flex gap-2">
-            <button className="btn border-2 border-slate-400 px-4 py-2">
-              Sign In
-            </button>
-            <button className="btn border-2 border-slate-400 px-4 py-2">
-              Sign Out
-            </button>
+            {user ? (
+              <LogoutLink>
+                {" "}
+                <button className="btn border-2 border-slate-400 px-4 py-2">
+                  Sign Out
+                </button>
+              </LogoutLink>
+            ) : (
+              <LoginLink>
+                {" "}
+                <button className="btn border-2 border-slate-400 px-4 py-2">
+                  Sign In
+                </button>
+              </LoginLink>
+            )}
           </div>
         </div>
       </div>
