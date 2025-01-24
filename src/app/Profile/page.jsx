@@ -4,7 +4,6 @@ const Profile = () => {
   const { isAuthenticated, getUser } = getKindeServerSession();
   const isUserAuthenticated = isAuthenticated();
   const user = getUser();
-
   return (
     <div>
       {isUserAuthenticated ? (

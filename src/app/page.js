@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -72,9 +73,11 @@ export default function Home() {
                 <p className="text-gray-700 text-sm">{item?.body}</p>
               </div>
               <div className="card-footer p-4 bg-gray-100 border-t border-gray-200">
-                <button className="btn btn-primary w-full py-2 text-white font-semibold rounded-lg">
-                  View Details
-                </button>
+                <Link href='Details'>
+                  <button className="btn btn-primary w-full py-2 text-white font-semibold rounded-lg">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
