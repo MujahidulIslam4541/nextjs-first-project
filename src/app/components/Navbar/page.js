@@ -42,9 +42,13 @@ const Navbar = () => {
                 <li>
                   <Link href="/About">About</Link>
                 </li>
-                <li>
-                  <Link href="/Products">Product</Link>
-                </li>
+                {user ? (
+                  <li>
+                    <Link href="/Profile">Profile</Link>
+                  </li>
+                ) : (
+                  ""
+                )}
               </ul>
             </div>
             <a className="btn btn-ghost text-xl">EJP Assignment</a>
@@ -57,9 +61,13 @@ const Navbar = () => {
               <li>
                 <Link href="/About">About</Link>
               </li>
-              <li>
-                <Link href="/Profile">Profile</Link>
-              </li>
+              {user ? (
+                <li>
+                  <Link href="/Profile">Profile</Link>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
           <div className="navbar-end flex gap-2">

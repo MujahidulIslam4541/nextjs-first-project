@@ -12,10 +12,9 @@ export default function Home() {
     }
     fetchData();
   }, []);
-  // console.log(Data);
   return (
     <>
-      <div
+      {/* <div
         className="hero min-h-screen"
         style={{
           backgroundImage: "url(https://i.ibb.co/HDLZdcw/Kayaking.jpg)",
@@ -23,10 +22,10 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        {/* Overlay */}
+
         <div className="hero-overlay bg-black bg-opacity-50"></div>
 
-        {/* Content */}
+ 
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-lg">
             <h1 className="mb-5 text-5xl font-extrabold text-white">
@@ -42,7 +41,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Section Heading */}
